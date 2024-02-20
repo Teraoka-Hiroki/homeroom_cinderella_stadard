@@ -2,4 +2,3 @@ streamlit
 amplify
 matplotlib
 numpy
-matplotlib
