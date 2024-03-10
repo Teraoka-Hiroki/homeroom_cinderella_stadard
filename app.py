@@ -40,7 +40,7 @@ def process_uploaded_file(file):
           column11_data_5to1,column12_data_5to1,column13_data_5to1,\
             column14_data_5to1,column15_data_5to1,column16_data_5to1,column17_data_5to1,\
               column11_data_1to1,column12_data_1to1,column13_data_1to1,\
-                column14_data_1to1,column15_data_1to1,column16_data_1to1,column17_data_1to1\
+                column14_data_1to1,column15_data_1to1,column16_data_1to1,column17_data_1to1,\
                   column11_data_4to1,column12_data_4to1,column13_data_4to1,\
                     column14_data_4to1,column15_data_4to1,column16_data_4to1,column17_data_4to1\
           = None, None, None, None, None, None,None,None,None,None, None, None, None, None, None, None, None, None,\
