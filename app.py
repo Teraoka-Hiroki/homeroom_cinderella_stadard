@@ -13,7 +13,7 @@ import os
 
 
 # タイトルの表示
-st.title("ホームルーム シンデレラ（STANDARD）")
+st.title("ホームルーム シンデレラ（STANDARD2）")
 
 # 説明の表示
 st.write("「生徒のクラス分け」アプリ　FROM　量子アニーリングマシン：Fixstars Amplify")
@@ -41,8 +41,10 @@ def process_uploaded_file(file):
             column14_data_5to1,column15_data_5to1,column16_data_5to1,column17_data_5to1,\
               column11_data_1to1,column12_data_1to1,column13_data_1to1,\
                 column14_data_1to1,column15_data_1to1,column16_data_1to1,column17_data_1to1\
+                  column11_data_4to1,column12_data_4to1,column13_data_4to1,\
+                    column14_data_4to1,column15_data_4to1,column16_data_4to1,column17_data_4to1\
           = None, None, None, None, None, None,None,None,None,None, None, None, None, None, None, None, None, None,\
-              None, None, None, None, None, None,None,None,None,None, None, None, None, None
+              None, None, None, None, None, None,None,None,None,None, None, None, None, None,None,None,None, None, None, None, None
           
 
     try:
@@ -53,36 +55,43 @@ def process_uploaded_file(file):
         column11_data = df.iloc[:, 2].tolist()
         # column11_dataの要素が5の場合は1にし、その他を0にするリストを作成する
         column11_data_5to1 = [1 if x == 5 else 0 for x in column11_data]
+        column11_data_4to1 = [1 if x == 4 else 0 for x in column11_data]
         column11_data_3to1 = [1 if x == 3 else 0 for x in column11_data]
         column11_data_1to1 = [1 if x == 1 else 0 for x in column11_data]
 
         column12_data = df.iloc[:, 3].tolist()
         column12_data_5to1 = [1 if x == 5 else 0 for x in column12_data]
+        column12_data_4to1 = [1 if x == 4 else 0 for x in column12_data]
         column12_data_3to1 = [1 if x == 3 else 0 for x in column12_data]
         column12_data_1to1 = [1 if x == 1 else 0 for x in column12_data]
 
         column13_data = df.iloc[:, 4].tolist()
         column13_data_5to1 = [1 if x == 5 else 0 for x in column13_data]
+        column13_data_4to1 = [1 if x == 4 else 0 for x in column13_data]
         column13_data_3to1 = [1 if x == 3 else 0 for x in column13_data]
         column13_data_1to1 = [1 if x == 1 else 0 for x in column13_data]
 
         column14_data = df.iloc[:, 5].tolist()
         column14_data_5to1 = [1 if x == 5 else 0 for x in column14_data]
+        column14_data_4to1 = [1 if x == 4 else 0 for x in column14_data] 
         column14_data_3to1 = [1 if x == 3 else 0 for x in column14_data]
         column14_data_1to1 = [1 if x == 1 else 0 for x in column14_data]
 
         column15_data = df.iloc[:, 6].tolist()
         column15_data_5to1 = [1 if x == 5 else 0 for x in column15_data]
+        column15_data_4to1 = [1 if x == 4 else 0 for x in column15_data] 
         column15_data_3to1 = [1 if x == 3 else 0 for x in column15_data]
         column15_data_1to1 = [1 if x == 1 else 0 for x in column15_data]
 
         column16_data = df.iloc[:, 7].tolist()
         column16_data_5to1 = [1 if x == 5 else 0 for x in column16_data]
+        column16_data_4to1 = [1 if x == 4 else 0 for x in column16_data] 
         column16_data_3to1 = [1 if x == 3 else 0 for x in column16_data]
         column16_data_1to1 = [1 if x == 1 else 0 for x in column16_data]
 
         column17_data = df.iloc[:, 8].tolist()
         column17_data_5to1 = [1 if x == 5 else 0 for x in column17_data]
+        column17_data_4to1 = [1 if x == 4 else 0 for x in column17_data] 
         column17_data_3to1 = [1 if x == 3 else 0 for x in column17_data]
         column17_data_1to1 = [1 if x == 1 else 0 for x in column17_data]
 
@@ -97,13 +106,13 @@ def process_uploaded_file(file):
     except Exception as e:
 #        st.error(f"エラーが発生しました。: {e}")
         st.error(f"前のクラスが設定されていないファイルです。")
-    return df, column11_data,column11_data_5to1,column11_data_1to1,\
-                column12_data,column12_data_5to1,column12_data_1to1,\
-                 column13_data,column13_data_5to1,column13_data_1to1,\
-                  column14_data,column14_data_5to1,column14_data_1to1,\
-                   column15_data,column15_data_5to1,column15_data_1to1,\
-                    column16_data,column16_data_5to1,column16_data_1to1,\
-                      column17_data,column17_data_5to1,column17_data_1to1,\
+    return df, column11_data,column11_data_5to1,column11_data_4to1,column11_data_1to1,\
+                column12_data,column12_data_5to1,column12_data_4to1,column12_data_1to1,\
+                 column13_data,column13_data_5to1,column13_data_4to1,column13_data_1to1,\
+                  column14_data,column14_data_5to1,column14_data_4to1,column14_data_1to1,\
+                   column15_data,column15_data_5to1,column15_data_4to1,column15_data_1to1,\
+                    column16_data,column16_data_5to1,column16_data_4to1,column16_data_1to1,\
+                      column17_data,column17_data_5to1,column17_data_4to1,column17_data_1to1,\
                         column2_data, column3_data, column4_data, \
                           column11_data_3to1, column12_data_3to1, column13_data_3to1,\
                             column14_data_3to1,column15_data_3to1,column16_data_3to1,column17_data_3to1
@@ -116,13 +125,13 @@ def upload_file_youin():
         # アップロードされたファイルを処理
         with st.spinner("ファイルを処理中..."):
 #            df, column11_data,column12_data,column13_data,column14_data,column15_data,column16_data,column17_data, column2_data, column3_data, column4_data = process_uploaded_file(uploaded_file)
-            df, column11_data,column11_data_5to1,column11_data_1to1,\
-                column12_data,column12_data_5to1,column12_data_1to1,\
-                 column13_data,column13_data_5to1,column13_data_1to1,\
-                  column14_data,column14_data_5to1,column14_data_1to1,\
-                   column15_data,column15_data_5to1,column15_data_1to1,\
-                    column16_data,column16_data_5to1,column16_data_1to1,\
-                      column17_data,column17_data_5to1,column17_data_1to1,\
+            df, column11_data,column11_data_5to1,column11_data_4to1,column11_data_1to1,\
+                column12_data,column12_data_5to1,column12_data_4to1,column12_data_1to1,\
+                 column13_data,column13_data_5to1,column13_data_4to1,column13_data_1to1,\
+                  column14_data,column14_data_5to1,column14_data_4to1,column14_data_1to1,\
+                   column15_data,column15_data_5to1,column15_data_4to1,column15_data_1to1,\
+                    column16_data,column16_data_5to1,column16_data_4to1,column16_data_1to1,\
+                      column17_data,column17_data_5to1,column17_data_4to1,column17_data_1to1,\
                         column2_data, column3_data, column4_data,\
                           column11_data_3to1, column12_data_3to1, column13_data_3to1,\
                             column14_data_3to1,column15_data_3to1,column16_data_3to1,column17_data_3to1\
@@ -135,36 +144,43 @@ def upload_file_youin():
             st.write(df)
             w11=column11_data
             w11_5to1 = column11_data_5to1
+            w11_4to1 = column11_data_4to1
             w11_3to1 = column11_data_3to1
             w11_1to1 = column11_data_1to1
 
             w12=column12_data
             w12_5to1 = column12_data_5to1
+            w12_4to1 = column12_data_4to1
             w12_3to1 = column12_data_3to1
             w12_1to1 = column12_data_1to1
 
             w13=column13_data
             w13_5to1 = column13_data_5to1
+            w13_4to1 = column13_data_4to1
             w13_3to1 = column13_data_3to1
             w13_1to1 = column13_data_1to1
 
             w14=column14_data
             w14_5to1 = column14_data_5to1
+            w14_4to1 = column14_data_4to1
             w14_3to1 = column14_data_3to1
             w14_1to1 = column14_data_1to1
 
             w15=column15_data
             w15_5to1 = column15_data_5to1
+            w15_4to1 = column15_data_4to1
             w15_3to1 = column15_data_3to1
             w15_1to1 = column15_data_1to1
 
             w16=column16_data
             w16_5to1 = column16_data_5to1
+            w16_4to1 = column16_data_4to1
             w16_3to1 = column16_data_3to1
             w16_1to1 = column16_data_1to1
 
             w17=column17_data
             w17_5to1 = column17_data_5to1
+            w17_4to1 = column17_data_4to1
             w17_3to1 = column17_data_3to1
             w17_1to1 = column17_data_1to1
 
@@ -175,8 +191,8 @@ def upload_file_youin():
             else:
                 p=None
 
-            return w11, w11_5to1, w11_1to1, w12, w12_5to1, w12_1to1, w13, w13_5to1, w13_1to1, \
-              w14, w14_5to1, w14_1to1, w15, w15_5to1, w15_1to1, w16, w16_5to1, w16_1to1, w17, w17_5to1, w17_1to1, w1, w2,p, \
+            return w11, w11_5to1, w11_4to1,w11_1to1, w12, w12_5to1,w12_4to1, w12_1to1, w13, w13_5to1,w13_4to1, w13_1to1, \
+              w14, w14_5to1, w14_4to1, w14_1to1, w15, w15_5to1, w15_4to1, w15_1to1, w16, w16_5to1, w16_4to1, w16_1to1, w17, w17_5to1, w17_4to1, w17_1to1, w1, w2,p, \
                 w11_3to1, w12_3to1, w13_3to1, w14_3to1, w15_3to1, w16_3to1, w17_3to1
 
 
@@ -212,8 +228,8 @@ if uploaded_file is not None:
 try:
         w11=None
 #        w11, w12, w13, w14, w15,w16,w17,  w1, w2, p = upload_file_youin()
-        w11, w11_5to1, w11_1to1, w12, w12_5to1, w12_1to1, w13, w13_5to1, w13_1to1, \
-              w14, w14_5to1, w14_1to1, w15, w15_5to1, w15_1to1, w16, w16_5to1, w16_1to1, w17, w17_5to1, w17_1to1, w1, w2, p, \
+        w11, w11_5to1, w11_4to1, w11_1to1, w12, w12_5to1, w12_4to1, w12_1to1, w13, w13_5to1, w13_4to1, w13_1to1, \
+              w14, w14_5to1, w14_4to1, w14_1to1, w15, w15_5to1, w15_4to1, w15_1to1, w16, w16_5to1, w16_4to1,, w16_1to1, w17, w17_5to1, w17_4to1, w17_1to1, w1, w2, p, \
                 w11_3to1, w12_3to1, w13_3to1, w14_3to1, w15_3to1, w16_3to1, w17_3to1 = upload_file_youin()
 
         if p != None:
@@ -288,30 +304,37 @@ try:
         cost17  = 1/K * sum((sum(w17[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w17[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         
         cost11_5to1 = 1/K * sum((sum(w11_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w11_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost11_4to1 = 1/K * sum((sum(w11_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w11_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost11_3to1 = 1/K * sum((sum(w11_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w11_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost11_1to1 = 1/K * sum((sum(w11_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w11_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         
         cost12_5to1 = 1/K * sum((sum(w12_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w12_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost12_4to1 = 1/K * sum((sum(w12_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w12_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost12_3to1 = 1/K * sum((sum(w12_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w12_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost12_1to1 = 1/K * sum((sum(w12_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w12_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
 
         cost13_5to1 = 1/K * sum((sum(w13_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w13_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost13_4to1 = 1/K * sum((sum(w13_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w13_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost13_3to1 = 1/K * sum((sum(w13_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w13_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost13_1to1 = 1/K * sum((sum(w13_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w13_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
 
         cost14_5to1 = 1/K * sum((sum(w14_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w14_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost14_4to1 = 1/K * sum((sum(w14_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w14_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost14_3to1 = 1/K * sum((sum(w14_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w14_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost14_1to1 = 1/K * sum((sum(w14_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w14_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
 
         cost15_5to1 = 1/K * sum((sum(w15_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w15_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost15_4to1 = 1/K * sum((sum(w15_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w15_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost15_3to1 = 1/K * sum((sum(w15_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w15_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost15_1to1 = 1/K * sum((sum(w15_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w15_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
 
         cost16_5to1 = 1/K * sum((sum(w16_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w16_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost16_4to1 = 1/K * sum((sum(w16_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w16_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost16_3to1 = 1/K * sum((sum(w16_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w16_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost16_1to1 = 1/K * sum((sum(w16_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w16_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
 
         cost17_5to1 = 1/K * sum((sum(w17_5to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w17_5to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
+        cost17_4to1 = 1/K * sum((sum(w17_4to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w17_4to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         cost17_3to1 = 1/K * sum((sum(w17_3to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w17_3to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))        
         cost17_1to1 = 1/K * sum((sum(w17_1to1[i]*x[i,k] for i in range(N)) - 1/K * sum(sum(w17_1to1[i]*x[i,k] for i in range(N)) for k in range(K)))**2 for k in range(K))
         
@@ -333,14 +356,20 @@ try:
                + a11*cost11_5to1 + a11*cost11_1to1 + a12*cost12_5to1 + a12*cost12_1to1 + a13*cost13_5to1 + a13*cost13_1to1 \
                 + a14*cost14_5to1 + a14*cost14_1to1 + a15*cost15_5to1 + a15*cost15_1to1 + a16*cost16_5to1 + a16*cost16_1to1 + a17*cost17_5to1 + a17*cost17_1to1 \
                   + a11*cost11_3to1 + a12*cost12_3to1 + a13*cost13_3to1 + a14*cost14_3to1 \
-                    + a15*cost15_3to1 + a16*cost16_3to1 + a17*cost17_3to1 
+                    + a15*cost15_3to1 + a16*cost16_3to1 + a17*cost17_3to1 \
+                      + a11*cost11_4to1 + a12*cost12_4to1 + a13*cost13_4to1 + a14*cost14_4to1 \
+                        + a15*cost15_4to1 + a16*cost16_4to1 + a17*cost17_4to1 
+
 
         else:
             cost = a11*cost11 + a12*cost12 + a13*cost13 + a14*cost14 + a15*cost15 + a16*cost16 + a17*cost17+ b*cost2 + c*cost3 \
               + a11*cost11_5to1 + a11*cost11_1to1 + a12*cost12_5to1 + a12*cost12_1to1 + a13*cost13_5to1 + a13*cost13_1to1 \
                 + a14*cost14_5to1 + a14*cost14_1to1 + a15*cost15_5to1 + a15*cost15_1to1 + a16*cost16_5to1 + a16*cost16_1to1 + a17*cost17_5to1 + a17*cost17_1to1 \
                   + a11*cost11_3to1 + a12*cost12_3to1 + a13*cost13_3to1 + a14*cost14_3to1 \
-                    + a15*cost15_3to1 + a16*cost16_3to1 + a17*cost17_3to1 
+                    + a15*cost15_3to1 + a16*cost16_3to1 + a17*cost17_3to1 \
+                      + a11*cost11_4to1 + a12*cost12_4to1 + a13*cost13_4to1 + a14*cost14_4to1 \
+                        + a15*cost15_4to1 + a16*cost16_4to1 + a17*cost17_4to1 
+
         
         penalty1 = lam1 * sum((sum(x[i,k] for k in range(K)) -1 )**2 for i in range(N))
         penalty2 = lam2 * sum((sum(x[i,k] for i in range(N)) -N/K )**2 for k in range(K))
@@ -562,5 +591,5 @@ try:
         st.write(output_text)
 
 except Exception as e:
-    st.error("ファイルアップロード後に計算されます".format(e))
-#    st.error("ファイルアップロード後に計算されます{}".format(e))
+#    st.error("ファイルアップロード後に計算されます".format(e))
+    st.error("ファイルアップロード後に計算されます{}".format(e))
