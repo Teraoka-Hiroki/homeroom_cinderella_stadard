@@ -229,7 +229,7 @@ try:
         w11=None
 #        w11, w12, w13, w14, w15,w16,w17,  w1, w2, p = upload_file_youin()
         w11, w11_5to1, w11_4to1, w11_1to1, w12, w12_5to1, w12_4to1, w12_1to1, w13, w13_5to1, w13_4to1, w13_1to1, \
-              w14, w14_5to1, w14_4to1, w14_1to1, w15, w15_5to1, w15_4to1, w15_1to1, w16, w16_5to1, w16_4to1,, w16_1to1, w17, w17_5to1, w17_4to1, w17_1to1, w1, w2, p, \
+              w14, w14_5to1, w14_4to1, w14_1to1, w15, w15_5to1, w15_4to1, w15_1to1, w16, w16_5to1, w16_4to1, w16_1to1, w17, w17_5to1, w17_4to1, w17_1to1, w1, w2, p, \
                 w11_3to1, w12_3to1, w13_3to1, w14_3to1, w15_3to1, w16_3to1, w17_3to1 = upload_file_youin()
 
         if p != None:
